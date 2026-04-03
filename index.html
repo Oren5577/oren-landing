@@ -2,132 +2,233 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Oren</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OREN — Coming Soon</title>
 
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
-      background: #f5efe8;
-      color: #3b2d26;
+      font-family: 'Inter', sans-serif;
+      background-color: #23251D;
+      color: #CCBFAE;
+      line-height: 1.6;
     }
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 60px 24px;
-      text-align: center;
-      background: linear-gradient(to bottom, #e9dfd3, #f5efe8);
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      letter-spacing: 0.5px;
     }
 
     .container {
-      max-width: 760px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 20px;
     }
 
-    .brand {
-      font-size: 13px;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: #8a6f5d;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: 64px;
-      line-height: 1.1;
-      margin: 0 0 20px;
-      font-weight: normal;
-    }
-
-    .subtitle {
-      max-width: 620px;
-      margin: 0 auto 32px;
-      font-size: 19px;
-      line-height: 1.8;
-      color: #6f5a4d;
-    }
-
-    .form {
+    /* HERO */
+    .hero {
+      height: 100vh;
+      background: url('YOUR_PRODUCT_IMAGE.jpg') center/cover no-repeat;
+      position: relative;
       display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
+      text-align: center;
     }
 
-    input[type="email"] {
-      width: 320px;
-      max-width: 100%;
-      height: 50px;
-      border-radius: 999px;
-      border: 1px solid #d7c7b8;
-      padding: 0 18px;
-      font-size: 15px;
-      background: rgba(255,255,255,0.9);
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(35, 37, 29, 0.65);
     }
 
-    button {
-      height: 50px;
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+    }
+
+    .logo {
+      width: 140px;
+      margin-bottom: 30px;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      opacity: 0.9;
+      margin-bottom: 30px;
+    }
+
+    .email-box {
+      display: flex;
+      border: 1px solid #CCBFAE;
+      border-radius: 40px;
+      overflow: hidden;
+    }
+
+    .email-box input {
+      flex: 1;
+      padding: 14px 20px;
       border: none;
-      border-radius: 999px;
-      padding: 0 24px;
-      background: #3b2d26;
-      color: white;
-      font-size: 15px;
+      outline: none;
+      background: transparent;
+      color: #CCBFAE;
+    }
+
+    .email-box button {
+      background: #CCBFAE;
+      color: #23251D;
+      border: none;
+      padding: 0 25px;
       cursor: pointer;
+      font-weight: 500;
     }
 
-    .note {
+    /* BRAND STATEMENT */
+    .statement {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+      font-size: 20px;
+      opacity: 0.9;
+    }
+
+    /* PRODUCT SECTION */
+    .product {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .product-text h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    /* BENEFITS */
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+
+    .benefit h3 {
+      margin-bottom: 10px;
+    }
+
+    .benefit p {
       font-size: 14px;
-      color: #8a6f5d;
-      margin-top: 10px;
+      opacity: 0.8;
     }
 
-    @media (max-width: 640px) {
-      h1 {
-        font-size: 42px;
+    /* FINAL CTA */
+    .final-cta {
+      text-align: center;
+      background: #462F21;
+      padding: 80px 20px;
+    }
+
+    .final-cta h2 {
+      margin-bottom: 20px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width: 768px) {
+      .product {
+        grid-template-columns: 1fr;
       }
 
-      .subtitle {
-        font-size: 17px;
-      }
-
-      .form {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      input[type="email"],
-      button {
-        width: 100%;
-        max-width: 360px;
+      .benefits {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
+
 <body>
-  <section class="hero">
-    <div class="container">
-      <div class="brand">OREN</div>
-      <h1>Hair care,<br>with intention.</h1>
-      <p class="subtitle">
-        A nourishing ritual designed to restore softness, shine, and calm.
-        Thoughtfully made for hair that deserves more than quick fixes.
-      </p>
 
-      <div class="form">
-        <input type="email" placeholder="Enter your email" />
-        <button>Join waitlist</button>
-      </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="overlay"></div>
 
-      <div class="note">Launching soon in the UAE.</div>
+  <div class="hero-content">
+    <img src="YOUR_LOGO.png" class="logo" alt="OREN Logo">
+
+    <h1>Hair care, with intention</h1>
+    <p>A nourishing ritual designed to restore softness, shine, and calm.</p>
+
+    <div class="email-box">
+      <input type="email" placeholder="Enter your email">
+      <button>Join the waitlist</button>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- BRAND STATEMENT -->
+<section class="container">
+  <div class="statement">
+    OREN is a quiet ritual of care — a botanical oil crafted to restore balance,
+    softness, and natural beauty through intentional formulation.
+  </div>
+</section>
+
+<!-- PRODUCT -->
+<section class="container product">
+  <img src="YOUR_PRODUCT_IMAGE.jpg" alt="OREN Oil">
+
+  <div class="product-text">
+    <h2>A daily ritual</h2>
+    <p>
+      Infused with botanical extracts, OREN transforms your hair care into a moment
+      of calm. Lightweight, nourishing, and deeply restorative — designed to be felt,
+      not just seen.
+    </p>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="container benefits">
+  <div class="benefit">
+    <h3>Nourish</h3>
+    <p>Deep hydration for lasting softness</p>
+  </div>
+
+  <div class="benefit">
+    <h3>Repair</h3>
+    <p>Strengthens and restores damaged hair</p>
+  </div>
+
+  <div class="benefit">
+    <h3>Shine</h3>
+    <p>Enhances natural glow and smoothness</p>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>Be part of the ritual</h2>
+
+  <div class="email-box" style="max-width:400px;margin:auto;">
+    <input type="email" placeholder="Enter your email">
+    <button>Join the waitlist</button>
+  </div>
+</section>
+
 </body>
 </html>
